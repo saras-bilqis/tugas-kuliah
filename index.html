@@ -1,40 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Saraswati Nur Bilqis</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .clock {
+      width: 200px;
+      height: 200px;
+      border: 5px solid #000;
+      border-radius: 50%;
+      position: relative;
+      margin: 20px auto;
+    }
+
+    .hand {
+      width: 50%;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+
+    .hour-hand {
+      width: 40%;
+    }
+  </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color:#F0C1E1;">
     <div class="container">
       <a class="navbar-brand" href="#">Saraswati Nur Bilqis</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
   </nav>
 
-  <!-- Home Section -->
   <section class="jumbotron text-center">
-    <img src="img/SARAS.jpeg" style="width: 200px;">
+    <img src="img/SARAS.jpeg" style="width: 200px;" alt="Profile Picture">
     <h1 class="display-4">Hello Guys</h1>
     <p class="lead">Perkenalkan Nama Saya Saraswati Nur Bilqis</p>
   </section>
 
-  <!-- About Section -->
   <div class="container">
     <h1>PROGRAM</h1>
     <div class="row">
-      <!-- Hello World Card -->
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
@@ -47,7 +67,6 @@
         </div>
       </div>
 
-      <!-- Luas Persegi Panjang Card -->
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
@@ -59,7 +78,6 @@
         </div>
       </div>
 
-      <!-- Segitiga Bintang Card -->
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
@@ -75,9 +93,7 @@
     </div>
   </div>
 
-  <!-- Modal untuk Hello World -->
-  <div class="modal fade" id="helloWorldModal" tabindex="-1" role="dialog" aria-labelledby="helloWorldLabel"
-    aria-hidden="true">
+  <div class="modal fade" id="helloWorldModal" tabindex="-1" role="dialog" aria-labelledby="helloWorldLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -96,9 +112,7 @@
     </div>
   </div>
 
-  <!-- Modal untuk Luas Persegi Panjang -->
-  <div class="modal fade" id="luasPersegiModal" tabindex="-1" role="dialog" aria-labelledby="luasPersegiLabel"
-    aria-hidden="true">
+  <div class="modal fade" id="luasPersegiModal" tabindex="-1" role="dialog" aria-labelledby="luasPersegiLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -121,7 +135,6 @@
     </div>
   </div>
 
-  <!-- Modal untuk Segitiga Bintang -->
   <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -132,7 +145,6 @@
           </button>
         </div>
         <div class="modal-body" id="resultContent">
-          <!-- Hasil segitiga akan ditampilkan di sini -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -140,167 +152,33 @@
       </div>
     </div>
   </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Website</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="content">
-	  
-    <!-- Analog Clock -->
-    <div class="clock-container">
-      <div class="clock">
-        <div class="hour-hand" id="hour"></div>
-        <div class="minute-hand" id="minute"></div>
-        <div class="second-hand" id="second"></div>
-        <div class="center-circle"></div>
-      </div>
-      <p class="clock-label">Current Time</p>
+
+  <div class="container text-center">
+    <h2>Analog Clock</h2>
+    <div class="clock">
+      <div class="hand hour-hand"></div>
+      <div class="hand minute-hand"></div>
+      <div class="hand second-hand"></div>
     </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
-
-
   <script>
     function hitungLuas() {
-      const panjang = document.getElementById('panjang').value;
-      const lebar = document.getElementById('lebar').value;
-      const luas = panjang * lebar;
-      document.getElementById('luasResult').innerText = Luas: ${luas};
+      const panjang = parseFloat(document.getElementById('panjang').value);
+      const lebar = parseFloat(document.getElementById('lebar').value);
+      if (!isNaN(panjang) && !isNaN(lebar)) {
+        const luas = panjang * lebar;
+        document.getElementById('luasResult').innerText = `Luas: ${luas}`;
+      } else {
+        document.getElementById('luasResult').innerText = 'Masukkan nilai yang valid untuk panjang dan lebar.';
+      }
     }
 
     document.getElementById('generateBtn').addEventListener('click', function () {
-      const rows = document.getElementById('rowInput').value;
-      let result = '';
-
-      for (let i = 1; i <= rows; i++) {
-        result += ' '.repeat(rows - i) + '* '.repeat(i) + '<br>';
-      }
-
-      document.getElementById('resultContent').innerHTML = result;
-      $('#resultModal').modal('show');
-    });
-    
-    var dialLines = document.getElementsByClassName('diallines');
-var clockEl = document.getElementsByClassName('clock')[0];
-
-for (var i = 1; i < 60; i++) {
-  clockEl.innerHTML += "<div class='diallines'></div>";
-  dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
-}
-
-function clock() {
-  var weekday = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      d = new Date(),
-      h = d.getHours(),
-      m = d.getMinutes(),
-      s = d.getSeconds(),
-      date = d.getDate(),
-      month = d.getMonth() + 1,
-      year = d.getFullYear(),
-           
-      hDeg = h * 30 + m * (360/720),
-      mDeg = m * 6 + s * (360/3600),
-      sDeg = s * 6,
-      
-      hEl = document.querySelector('.hour-hand'),
-      mEl = document.querySelector('.minute-hand'),
-      sEl = document.querySelector('.second-hand'),
-      dateEl = document.querySelector('.date'),
-      dayEl = document.querySelector('.day');
-  
-      var day = weekday[d.getDay()];
-  
-  if(month < 9) {
-    month = "0" + month;
-  }
-  
-  hEl.style.transform = "rotate("+hDeg+"deg)";
-  mEl.style.transform = "rotate("+mDeg+"deg)";
-  sEl.style.transform = "rotate("+sDeg+"deg)";
-  dateEl.innerHTML = date+"/"+month+"/"+year;
-  dayEl.innerHTML = day;
-}
-
-setInterval("clock()", 100);
- });
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <div class="clock">
-        <div class="clock-face">
-            <div class="number number1">1</div>
-            <div class="number number2">2</div>
-            <div class="number number3">3</div>
-            <div class="number number4">4</div>
-            <div class="number number5">5</div>
-            <div class="number number6">6</div>
-            <div class="number number7">7</div>
-            <div class="number number8">8</div>
-            <div class="number number9">9</div>
-            <div class="number number10">10</div>
-            <div class="number number11">11</div>
-            <div class="number number12">12</div>
-            <div class="hand hour-hand"></div>
-            <div class="hand minute-hand"></div>
-            <div class="hand second-hand"></div>
-        </div>
-    </div>
-    <script src="script.js"> 
-  <script type="text/javascript">
-	const secondHand = document.querySelector('.jarum_detik');
-	const minuteHand = document.querySelector('.jarum_menit');
-	const jarum_jam = document.querySelector('.jarum_jam');
-
-	function setDate(){
-		const now = new Date();
-
-		const seconds = now.getSeconds();
-		const secondsDegrees = ((seconds / 60) * 360) + 90;
-		secondHand.style.transform = rotate(${secondsDegrees}deg);
-		if (secondsDegrees === 90) {
-			secondHand.style.transition = 'none';
-		} else if (secondsDegrees >= 91) {
-			secondHand.style.transition = 'all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1)'
-		}
-
-		const minutes = now.getMinutes();
-		const minutesDegrees = ((minutes / 60) * 360) + 90;
-		minuteHand.style.transform = rotate(${minutesDegrees}deg);
-
-		const hours = now.getHours();
-		const hoursDegrees = ((hours / 12) * 360) + 90;
-		jarum_jam.style.transform = rotate(${hoursDegrees}deg);
-	}
-
-	setInterval(setDate, 1000)
-
-</html>    
-  </script>
-</body>
-
-</html>
+      const rows = parseInt(document.getElementById('rowInput').value);
+      if (!isNaN(rows) && rows > 0) {
+        let result = '';
+        for (let i = 1; i <= rows; i++) {
+          result += '*'.repeat(i) + '<br>';
+        }
+        document.getElementById('resultContent').inner
