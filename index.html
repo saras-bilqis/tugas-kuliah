@@ -153,108 +153,26 @@
     </div>
   </div>
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  <script src="./js/script.js" type="module"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <link rel="stylesheet" href="style.css">
-    <title>Digital Analog Clock</title>
+    <meta name="description" content="Create analog clock with HTML5 Canvas">
+    <meta name="keywords" content="HTML5, Canvas, JavaScript">
+    <meta name="author" content="Soesapto Joeni Hantoro">
+    <title>Jam Analog</title>
+    <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
+    <img src="bg-clock.png" width="400"/>
+    <canvas width="400" height="400" id="myCanvas"></canvas>
+    <footer>by <a href="https://github.com/shidec/jam-analog" target="_blank">Shidec</a></footer>
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
 
-
-     <h2 style="text-align:center">Digital Analog Clock</h2>
-     
- <div class="container">
-
-   <!--------Jam------------>
-   <div  class="wrapperJam">
-     <div id="detikEl">
-      <div class="spacing"></div>
-       <div class="detikRot">
-         <span id="detik1"></span>
-       </div>
-       <div class="detikRot">
-         <span id="detik2"></span>
-       </div>
-       <div class="detikRot">
-         <span id="detik3"></span>
-       </div>
-       <div class="detikRot">
-         <span id="detik4"></span>
-       </div>
-       <div class="detikRot">
-         <span id="detik5"></span>
-       </div>
-     </div>
-     <div id="menitEl">
-     <div class="spacing"></div>
-     <div class="menitRot">
-       <span id="menit1"></span>
-     </div>
-     <div class="menitRot">
-       <span id="menit2"></span>
-     </div>
-     <div class="menitRot">
-       <span id="menit3"></span>
-     </div>
-     <div class="menitRot">
-       <span id="menit4"></span>
-     </div>
-     </div>
-     <div id="jamEl">
-     <div class="spacing"></div>
-      <div class="jamRot">
-       <span id="jam1"></span>
-      </div>
-      <div class="jamRot">
-       <span id="jam2"></span>
-      </div>
-      <div class="jamRot">
-       <span id="jam3"></span>
-      </div>
-     </div>
-     <div class="dot"></div>
-   </div>
-    <!---------------------->
-    
- </div>
- 
- <div class="kontenBawah">
-   
-   <div class="iconList">
-     <div id='icon1'></div>
-     <div id='icon2'></div>
-     <div id='icon3'></div>
-     <label for="inputFile">
-       <div id='icon4'>
-         <input style="display:none" type="file" id="inputFile" accept="image/png, image/jpg, image/jpeg, image/svg">
-       </div>
-     </label>
-   </div>
-   <div class="buttonList">
-  <a href="https://github.com/mininxd/Digital-Analog-Clock" target="_blank">
-     <button class="btn">
-       Source Code
-     </button>
-  </a>
-  
-  <a href="https://mininxd.my.id/" target="_blank">
-     <button class="btn">
-       Homepage
-     </button>
-  </a>
-   </div>
-   
- </div>
-  
-    <script>
+  <script>
         function setClock() {
     const now = new Date();
     
