@@ -168,50 +168,12 @@
       <div class="hand second-hand"></div>
     </div>
   </div>
-  <script src="script.js"></script>
+ <link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 </body>
 </html>
-
-
-  <script>
-        function setClock() {
-    const now = new Date();
-    
-    const seconds = now.getSeconds();
-    const secondsDegrees = (seconds / 60) * 360 + 90; // Add 90 to align to top
-    document.querySelector('.second-hand').style.transform = `rotate(${secondsDegrees}deg)`;
-
-    const minutes = now.getMinutes();
-    const minutesDegrees = (minutes / 60) * 360 + 90;
-    document.querySelector('.minute-hand').style.transform = `rotate(${minutesDegrees}deg)`;
-
-    const hours = now.getHours();
-    const hoursDegrees = ((hours % 12) / 12) * 360 + 90 + (minutes / 60) * 30;
-    document.querySelector('.hour-hand').style.transform = `rotate(${hoursDegrees}deg)`;
-}
-
-// Update clock every second
-setInterval(setClock, 1000);
-
-// Initialize the clock immediately
-setClock();
-            // Set the rotation of the hands
-            hourHand.style.transform = `rotate(${hourDeg}deg)`;
-            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-            secondHand.style.transform = `rotate(${secondDeg}deg)`;
-        }
-
-        // Update the clock every second
-        setInterval(setClock, 1000);
-
-        // Call the setClock function initially to set the clock immediately
-        setClock();
-    </script>
-</body>
-
-</html>
-
-
+</link>
+  
     <script>
         // Calculate and display area (Luas)
         function hitungLuas() {
