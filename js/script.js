@@ -1,26 +1,23 @@
-function updateClock() {
-  const hourHand = document.getElementById('hour');
-  const minuteHand = document.getElementById('minute');
-  const secondHand = document.getElementById('second');
+import {detikFun} from './detik.js';
+import {menitFun} from './menit.js';
+import {jamFun} from './jam.js';
+import {rotatingTextFun} from './rotatingText.js';
+import {theme1Fun, theme2Fun, theme3Fun} from './theme.js';
 
-  const now = new Date();
+setInterval( function() {
+$('.dot').css('opacity','1');
+   detikFun();
+   menitFun();
+   jamFun();
+   rotatingTextFun();
+}, 100);
 
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
-
-  // Update the rotation for each hand
-  const hourDeg = (hours % 12) * 30 + (minutes / 60) * 30;
-  const minuteDeg = minutes * 6;
-  const secondDeg = seconds * 6;
-
-  hourHand.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
-  minuteHand.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
-  secondHand.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
-}
-
-// Update the clock every second
-setInterval(updateClock, 1000);
-
-// Initialize the clock
-updateClock();
+icon1.addEventListener('click', function() {
+  theme1Fun();
+});
+icon2.addEventListener('click', function() {
+  theme2Fun();
+});
+icon3.addEventListener('click', function() {
+  theme3Fun();
+});
