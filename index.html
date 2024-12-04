@@ -153,15 +153,6 @@
     </div>
   </div>
 
-  <div class="container text-center">
-    <h2>Analog Clock</h2>
-    <div class="clock">
-      <div class="hand hour-hand"></div>
-      <div class="hand minute-hand"></div>
-      <div class="hand second-hand"></div>
-    </div>
-  </div>
-
   <!DOCTYPE html>
 <html lang="en">
 
@@ -173,25 +164,62 @@
 </head>
 
 <body>
-    <div class="clock">
-        <div class="clock-face">
-            <div class="number number1">1</div>
-            <div class="number number2">2</div>
-            <div class="number number3">3</div>
-            <div class="number number4">4</div>
-            <div class="number number5">5</div>
-            <div class="number number6">6</div>
-            <div class="number number7">7</div>
-            <div class="number number8">8</div>
-            <div class="number number9">9</div>
-            <div class="number number10">10</div>
-            <div class="number number11">11</div>
-            <div class="number number12">12</div>
-            <div class="hand hour-hand"></div>
-            <div class="hand minute-hand"></div>
-            <div class="hand second-hand"></div>
+    <div class="container text-center">
+        <h2>Analog Clock</h2>
+        <div class="clock">
+            <div class="clock-face">
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
         </div>
     </div>
+
+    <script>
+        function setClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Calculate the rotation for the hands
+            const hourDeg = (hours % 12) * 30 + (minutes / 60) * 30; // 30 degrees per hour
+            const minuteDeg = (minutes * 6) + (seconds / 60) * 6; // 6 degrees per minute
+            const secondDeg = seconds * 6; // 6 degrees per second
+
+            // Get the hand elements
+            const hourHand = document.querySelector('.hour-hand');
+            const minuteHand = document.querySelector('.minute-hand');
+            const secondHand = document.querySelector('.second-hand');
+
+            // Set the rotation of the hands
+            hourHand.style.transform = `rotate(${hourDeg}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+            secondHand.style.transform = `rotate(${secondDeg}deg)`;
+        }
+
+        // Update the clock every second
+        setInterval(setClock, 1000);
+
+        // Call the setClock function initially to set the clock immediately
+        setClock();
+    </script>
+</body>
+
+</html>
+
 
     <script>
         // Calculate and display area (Luas)
