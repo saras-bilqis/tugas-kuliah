@@ -155,38 +155,105 @@
 
   <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="./js/script.js" type="module"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock</title>
-    <link rel="stylesheet" href="styles.css">
+   
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Analog Clock</title>
 </head>
 
 <body>
-    <div class="container text-center">
-        <h2>Analog Clock</h2>
-        <div class="clock">
-            <div class="clock-face">
-                <div class="number number1">1</div>
-                <div class="number number2">2</div>
-                <div class="number number3">3</div>
-                <div class="number number4">4</div>
-                <div class="number number5">5</div>
-                <div class="number number6">6</div>
-                <div class="number number7">7</div>
-                <div class="number number8">8</div>
-                <div class="number number9">9</div>
-                <div class="number number10">10</div>
-                <div class="number number11">11</div>
-                <div class="number number12">12</div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-            </div>
-        </div>
-    </div>
 
+
+     <h2 style="text-align:center">Digital Analog Clock</h2>
+     
+ <div class="container">
+
+   <!--------Jam------------>
+   <div  class="wrapperJam">
+     <div id="detikEl">
+      <div class="spacing"></div>
+       <div class="detikRot">
+         <span id="detik1"></span>
+       </div>
+       <div class="detikRot">
+         <span id="detik2"></span>
+       </div>
+       <div class="detikRot">
+         <span id="detik3"></span>
+       </div>
+       <div class="detikRot">
+         <span id="detik4"></span>
+       </div>
+       <div class="detikRot">
+         <span id="detik5"></span>
+       </div>
+     </div>
+     <div id="menitEl">
+     <div class="spacing"></div>
+     <div class="menitRot">
+       <span id="menit1"></span>
+     </div>
+     <div class="menitRot">
+       <span id="menit2"></span>
+     </div>
+     <div class="menitRot">
+       <span id="menit3"></span>
+     </div>
+     <div class="menitRot">
+       <span id="menit4"></span>
+     </div>
+     </div>
+     <div id="jamEl">
+     <div class="spacing"></div>
+      <div class="jamRot">
+       <span id="jam1"></span>
+      </div>
+      <div class="jamRot">
+       <span id="jam2"></span>
+      </div>
+      <div class="jamRot">
+       <span id="jam3"></span>
+      </div>
+     </div>
+     <div class="dot"></div>
+   </div>
+    <!---------------------->
+    
+ </div>
+ 
+ <div class="kontenBawah">
+   
+   <div class="iconList">
+     <div id='icon1'></div>
+     <div id='icon2'></div>
+     <div id='icon3'></div>
+     <label for="inputFile">
+       <div id='icon4'>
+         <input style="display:none" type="file" id="inputFile" accept="image/png, image/jpg, image/jpeg, image/svg">
+       </div>
+     </label>
+   </div>
+   <div class="buttonList">
+  <a href="https://github.com/mininxd/Digital-Analog-Clock" target="_blank">
+     <button class="btn">
+       Source Code
+     </button>
+  </a>
+  
+  <a href="https://mininxd.my.id/" target="_blank">
+     <button class="btn">
+       Homepage
+     </button>
+  </a>
+   </div>
+   
+ </div>
+  
     <script>
         function setClock() {
     const now = new Date();
