@@ -56,9 +56,11 @@ body {
     height: 2px;
     background-color: #333;
     top: 50%;
-    transform-origin: 100%;
-    transform: rotate(90deg);
+    left: 50%;
+    transform-origin: 100%; /* Rotate around the far end */
     transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
 }
 
 .hour-hand {
