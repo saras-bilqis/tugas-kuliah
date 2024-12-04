@@ -38,16 +38,15 @@ body {
 }
 
 .hand {
-    width: 50%;
-    height: 4px;
-    background: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: 100%;
-    transform: rotate(90deg); /* Default starting point */
-    transition: all 0.05s ease-in-out;
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  position: absolute;
+  width: 50%;
+  height: 4px; /* Adjust height for hour, minute, and second hands */
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform-origin: 100%; /* This makes the rotation pivot from one end */
+  transform: rotate(90deg); /* Adjust starting point */
+  transition: all 0.05s ease-in-out;
 }
 
 .hour-hand {
