@@ -26,28 +26,31 @@ body {
 }
 
 .hand {
-  position: absolute;
-  width: 50%;
-  height: 4px; /* Adjust height for hour, minute, and second hands */
-  background-color: black;
-  top: 50%;
-  left: 50%;
-  transform-origin: 100%; /* This makes the rotation pivot from one end */
-  transform: rotate(90deg); /* Adjust starting point */
-  transition: all 0.05s ease-in-out;
+    width: 50%;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 100%; /* Rotate from the end of the hand */
+    transform: rotate(90deg); /* Default position: pointing upwards */
+    transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1); /* Smooth animation */
 }
 
 .hour-hand {
-    height: 6px;
     background: black;
+    height: 6px; /* Thicker for the hour hand */
+    width: 30%; /* Shorter than the others */
 }
 
 .minute-hand {
-    height: 4px;
     background: gray;
+    height: 4px;
+    width: 40%; /* Longer than hour hand */
 }
 
 .second-hand {
-    height: 2px;
     background: red;
+    height: 2px;
+    width: 45%; /* Longest hand */
 }
