@@ -10,22 +10,57 @@ body {
     flex-direction: column;
 }
 
-img{
-    position: absolute;
-    display: block;
-    left: calc(50vw - 200px);
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
 }
 
-canvas{
-    position: absolute;
-    display: block;
-    left: calc(50vw - 200px);
+.clock {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    position: relative;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-footer{
-    font-family: 'Courier New', Courier, monospace;
-    position: absolute;
-    text-align: center;
+.clock-face {
     width: 100%;
-    top: 420px;
+    height: 100%;
+    position: relative;
+    transform: translateY(-3px); /* Fix alignment */
+}
+
+.hand {
+    width: 50%;
+    height: 4px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg); /* Default starting point */
+    transition: all 0.05s ease-in-out;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+    height: 6px;
+    background: black;
+}
+
+.minute-hand {
+    height: 4px;
+    background: gray;
+}
+
+.second-hand {
+    height: 2px;
+    background: red;
 }
