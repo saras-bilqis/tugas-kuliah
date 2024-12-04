@@ -136,3 +136,127 @@ body {
   font-size: 14px;
   color: #333;
 }
+
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 10px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.number {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.number1 { top: 10px; left: 120px; }
+.number2 { top: 40px; left: 200px; }
+.number3 { top: 120px; left: 240px; }
+.number4 { top: 200px; left: 200px; }
+.number5 { top: 230px; left: 120px; }
+.number6 { top: 200px; left: 40px; }
+.number7 { top: 120px; left: 10px; }
+.number8 { top: 40px; left: 40px; }
+.number9 { top: 10px; left: 120px; }
+.number10 { top: -10px; left: 40px; }
+.number11 { top: -20px; left: 40px; }
+.number12 { top: 10px; left: 200px; }
+
+/* Clock Hands */
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform-origin: 100%;
+  transform: translateY(-50%);
+  transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+  height: 4px;
+  background-color: #000;
+  width: 30%;
+}
+
+.minute-hand {
+  background-color: #666;
+  width: 40%;
+}
+
+.second-hand {
+  background-color: red;
+  width: 45%;
+}
+
+/* Clock Dial Lines */
+.diallines {
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+
+/* Center Circle */
+.clock-face::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Date and Day Display */
+.date, .day {
+  position: absolute;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.date {
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.day {
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
